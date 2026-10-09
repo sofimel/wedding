@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 760" fill="none">
+<defs>
+ <radialGradient id="petal"><stop stop-color="#edf3fc"/><stop offset=".55" stop-color="#c3d2eb"/><stop offset="1" stop-color="#9baed4" stop-opacity=".7"/></radialGradient>
+ <linearGradient id="leaf" x2="1" y2="1"><stop stop-color="#c0cfb2" stop-opacity=".8"/><stop offset="1" stop-color="#95a58d" stop-opacity=".65"/></linearGradient>
+ <filter id="soft"><feGaussianBlur stdDeviation=".45"/></filter>
+ <g id="flower" filter="url(#soft)">
+  <g fill="url(#petal)" stroke="#8fa5ca" stroke-opacity=".3" stroke-width=".8">
+   <ellipse cy="-21" rx="13" ry="24" transform="rotate(-8)"/><ellipse cy="-21" rx="13" ry="24" transform="rotate(64)"/><ellipse cy="-21" rx="13" ry="24" transform="rotate(136)"/><ellipse cy="-21" rx="13" ry="24" transform="rotate(208)"/><ellipse cy="-21" rx="13" ry="24" transform="rotate(280)"/>
+  </g><g stroke="#8d9fc0" stroke-opacity=".4"><path d="M0 0 0-37M0 0 34-12M0 0 22 29M0 0-22 29M0 0-34-12"/></g><circle r="5" fill="#fceea8"/><circle r="2" fill="#b4b391"/>
+ </g>
+ <g id="sprig"><path d="M0 0Q-28-46-12-96" stroke="#95a58d" stroke-width="2" stroke-opacity=".7"/><path d="M-10-30Q-53-27-49-62Q-14-59-10-30ZM-16-62Q14-63 18-93Q-14-89-16-62Z" fill="url(#leaf)"/><use href="#flower" transform="translate(-10 -103) scale(.38)"/></g>
+</defs>
+<g opacity=".9">
+<path d="M410 728C274 617 415 509 296 387S394 157 244 40M331 452Q174 400 195 269M353 242Q252 162 152 172M305 595Q234 557 218 502" stroke="#95a58d" stroke-width="3" stroke-opacity=".7"/>
+<g fill="url(#leaf)"><path d="M334 641Q243 624 263 563Q316 579 334 641ZM325 531Q401 489 398 451Q339 458 325 531ZM296 383Q224 384 221 327Q276 335 296 383ZM331 315Q412 306 407 247Q352 257 331 315ZM302 189Q238 157 247 119Q290 128 302 189ZM243 83Q190 62 199 21Q235 33 243 83Z"/></g>
+<use href="#sprig" transform="translate(320 660) rotate(-45)"/><use href="#sprig" transform="translate(300 441) rotate(-65)"/><use href="#sprig" transform="translate(322 254) rotate(55)"/><use href="#sprig" transform="translate(233 138) rotate(-60)"/>
+<use href="#flower" transform="translate(240 62) rotate(18) scale(1.1)"/><use href="#flower" transform="translate(304 103) rotate(-12) scale(.92)"/><use href="#flower" transform="translate(351 65) scale(.72)"/><use href="#flower" transform="translate(346 157) rotate(30) scale(1.1)"/><use href="#flower" transform="translate(198 174) rotate(12) scale(.8)"/><use href="#flower" transform="translate(295 236) scale(.68)"/><use href="#flower" transform="translate(374 288) rotate(18) scale(.93)"/><use href="#flower" transform="translate(321 329) scale(.75)"/><use href="#flower" transform="translate(240 315) scale(.64)"/>
+<use href="#flower" transform="translate(297 408) rotate(20) scale(1.15)"/><use href="#flower" transform="translate(349 443) scale(.76)"/><use href="#flower" transform="translate(279 479) rotate(-15) scale(.8)"/><use href="#flower" transform="translate(338 553) rotate(15) scale(1)"/><use href="#flower" transform="translate(387 594) scale(.68)"/><use href="#flower" transform="translate(287 620) scale(.72)"/>
+</g></svg>
