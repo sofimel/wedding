@@ -1,0 +1,641 @@
+﻿:root {
+  --paper: #fff;
+  --green: #5d7b9f;
+  --ink: #526886;
+  --muted: #6c7786;
+  --line: #e7e9ef;
+  --soft-rose: #fbf8f8;
+  --soft-blue: #9baed4;
+  --soft-lavender: #8198c5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 16px/1.7 Georgia, serif;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+nav {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 6%;
+  border-bottom: 1px solid #f0edf0;
+  background: #fff;
+}
+
+nav a {
+  color: var(--green);
+  font: 12px Georgia, serif;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+nav div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.brand {
+  color: var(--soft-lavender);
+  font-family: "Tangerine", Georgia, serif;
+  font-size: 34px;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 0;
+}
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 850px;
+  padding: 100px 20px 90px;
+  background: #fff;
+  text-align: center;
+}
+
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.hero::before {
+  top: 0;
+  right: -65px;
+  width: 360px;
+  height: 670px;
+  background-image: url("floral-direita.png");
+  opacity: 0.95;
+  mix-blend-mode: multiply;
+}
+
+.hero::after {
+  left: -90px;
+  bottom: -65px;
+  width: 310px;
+  height: 540px;
+  background-image: url("floral-esquerda.png");
+  opacity: 0.9;
+  transform: none;
+  mix-blend-mode: multiply;
+}
+
+.eyebrow {
+  color: var(--muted);
+  font: 11px Georgia, serif;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.hero .eyebrow {
+  color: var(--soft-lavender);
+  letter-spacing: 5px;
+}
+
+.hero > p:not(.eyebrow) {
+  position: relative;
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero h1 {
+  margin: 30px 0;
+  color: var(--soft-lavender);
+  font-family: "Tangerine", Georgia, serif;
+  font-size: clamp(82px, 11vw, 132px);
+  font-weight: 400;
+  line-height: 1.05;
+  font-style: normal;
+}
+
+.hero .date {
+  color: var(--soft-lavender);
+  letter-spacing: 4px;
+  font-size: 20px;
+}
+
+.hero > .leaf {
+  font-size: 34px;
+  color: var(--soft-blue);
+}
+
+.couple-amp {
+  font-size: 0.65em;
+}
+
+h1,
+h2,
+h3,
+.brand {
+  font-family: "Tangerine", Georgia, serif;
+  font-style: normal;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: clamp(76px, 12vw, 136px);
+  line-height: 0.95;
+}
+
+h2,
+h3 {
+  color: #728bb4;
+  font-weight: 400;
+}
+
+h2 {
+  margin: 14px 0 24px;
+  font-size: 58px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: 38px;
+  font-weight: 700;
+}
+
+.leaf {
+  font-size: 44px;
+  color: #95a58d;
+}
+
+.date {
+  letter-spacing: 3px;
+  font-size: 20px;
+}
+
+.button,
+button {
+  display: inline-block;
+  padding: 13px 24px;
+  background: var(--green);
+  border: 1px solid var(--green);
+  border-radius: 2px;
+  color: #fff;
+  cursor: pointer;
+  font: 13px Georgia, serif;
+  text-decoration: none;
+}
+
+.button:hover,
+button:hover {
+  background: #496582;
+  border-color: #496582;
+}
+
+.hero .button {
+  margin-top: 24px;
+}
+
+.outline {
+  background: #fff;
+  color: var(--green);
+  border-color: #9baed4;
+}
+
+.outline:hover {
+  background: #f5f7fb;
+  color: #344a60;
+  border-color: var(--green);
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  margin-top: 50px;
+}
+
+.countdown b {
+  display: block;
+  color: var(--soft-lavender);
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.countdown span {
+  color: var(--muted);
+  font: 10px Georgia, serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+section {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 65px 24px;
+  text-align: center;
+}
+
+.section-heading {
+  margin-bottom: 24px;
+}
+
+.verse {
+  position: relative;
+  overflow: hidden;
+  max-width: none;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: #fff;
+}
+
+.verse::after {
+  content: "";
+  position: absolute;
+  right: -60px;
+  bottom: -230px;
+  width: 190px;
+  height: 360px;
+  background-image: url("floral-direita.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.22;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.verse blockquote {
+  max-width: 720px;
+  margin: 0 auto 18px;
+  color: #7285a2;
+  font-size: 23px;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.verse p {
+  color: var(--muted);
+  font: 11px Georgia, serif;
+  letter-spacing: 3px;
+}
+
+.location {
+  display: grid;
+  grid-template-columns: 1fr 1.08fr;
+  gap: 64px;
+  align-items: center;
+  padding-top: 80px;
+  padding-bottom: 70px;
+  text-align: left;
+}
+
+.location h2 {
+  margin: 20px 0 30px;
+  font-size: clamp(48px, 6vw, 66px);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.location-intro {
+  margin: 0 0 22px;
+  color: var(--muted);
+  font: 18px/1.8 Georgia, serif;
+}
+
+.location-detail {
+  padding: 22px 0;
+  border-top: 1px solid #dadedf;
+}
+
+.location-detail .eyebrow {
+  margin: 0 0 8px;
+  color: var(--green);
+  letter-spacing: 2px;
+}
+
+.location-detail > p:last-child,
+.location-detail address {
+  margin: 0;
+  font: 18px/1.7 Georgia, serif;
+  font-style: normal;
+}
+
+.map-link {
+  display: inline-block;
+  margin-top: 2px;
+  color: var(--green);
+  font: 16px/1.6 Georgia, serif;
+  text-underline-offset: 5px;
+}
+
+.location-map iframe {
+  display: block;
+  width: 100%;
+  height: 465px;
+  border: 1px solid #eef0f1;
+  border-radius: 240px 240px 0 0;
+  background: #f7f9fc;
+}
+
+.map-caption {
+  margin: 20px 0 0;
+  color: var(--muted);
+  font: 13px/1.8 Georgia, serif;
+  letter-spacing: 0.6px;
+}
+
+#traje {
+  border-top: 1px solid #eef0f1;
+  background: #fbf9fa;
+}
+
+#presentes {
+  position: relative;
+  isolation: isolate;
+}
+
+.dress-copy {
+  max-width: 720px;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.9;
+  text-align: center;
+  text-wrap: pretty;
+}
+
+.dress-copy p {
+  margin: 0;
+}
+
+.dress-copy strong {
+  color: #526886;
+  font-weight: 600;
+}
+
+.dress-floral {
+  display: block;
+  width: clamp(140px, 20vw, 210px);
+  height: auto;
+  margin: 18px auto 0;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.gifts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.gift {
+  padding: 28px 22px;
+  border: 1px solid var(--line);
+  border-top: 1px solid #e7e9ef;
+  background: #fff;
+}
+
+.gift:nth-child(2) {
+  background: #fff;
+}
+
+.gift:nth-child(3) {
+  border-top: 2px solid #fceea8;
+}
+
+.gift .icon {
+  color: var(--soft-blue);
+  font-size: 32px;
+  line-height: 1;
+}
+
+.gift h3 {
+  margin: 18px 0 12px;
+  color: var(--ink);
+  font-size: 30px;
+}
+
+.gift p,
+.note,
+footer,
+.panel p {
+  color: var(--muted);
+}
+
+.note {
+  margin-top: 18px;
+  font-size: 15px;
+}
+
+#rsvp {
+  max-width: 620px;
+  margin: 28px auto 0;
+  text-align: left;
+}
+
+#rsvp label {
+  display: block;
+  margin: 18px 0 8px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #dadedf;
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid var(--green);
+  outline-offset: 2px;
+}
+
+#status {
+  min-height: 24px;
+  margin-top: 16px;
+  color: var(--green);
+  font-weight: 600;
+}
+
+#download {
+  display: none;
+  margin-top: 16px;
+}
+
+footer {
+  position: relative;
+  overflow: hidden;
+  padding: 55px 20px;
+  background: #fbf8f8;
+  text-align: center;
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  left: -45px;
+  bottom: -100px;
+  width: 200px;
+  height: 370px;
+  background-image: url("floral-esquerda.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: none;
+  opacity: 0.65;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+footer .leaf {
+  color: var(--soft-blue);
+}
+
+.opening-floral {
+  display: block;
+  width: clamp(150px, 22vw, 240px);
+  height: auto;
+  margin: -35px auto 12px;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+@media (min-width: 651px) and (max-width: 1000px) {
+  .hero::before {
+    right: -140px;
+  }
+
+  .hero::after {
+    left: -160px;
+  }
+}
+
+@media (max-width: 650px) {
+  .hero {
+    min-height: auto;
+    padding: 95px 24px 90px;
+  }
+
+  .hero::before {
+    top: 0;
+    right: -70px;
+    width: 170px;
+    height: 310px;
+    opacity: 0.8;
+  }
+
+  .hero::after {
+    left: -65px;
+    bottom: -30px;
+    width: 150px;
+    height: 260px;
+    opacity: 0.7;
+  }
+
+  .hero > p:not(.eyebrow) {
+    max-width: 320px;
+  }
+
+  .hero h1 {
+    position: relative;
+    font-size: 88px;
+  }
+
+  .hero .eyebrow {
+    font-size: 10px;
+    letter-spacing: 3px;
+  }
+
+  .gifts {
+    grid-template-columns: 1fr;
+  }
+
+  .location {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding-top: 45px;
+  }
+
+  .location h2 {
+    font-size: 54px;
+  }
+
+  .location-map iframe {
+    height: 400px;
+  }
+
+  .location-detail > p:last-child,
+  .location-detail address {
+    font-size: 16px;
+  }
+
+  .verse blockquote {
+    font-size: 21px;
+  }
+
+  .dress-copy {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  footer::before {
+    left: -55px;
+    bottom: -60px;
+    width: 130px;
+    height: 230px;
+    opacity: 0.4;
+  }
+}
+
+@media (max-width: 540px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav div {
+    gap: 10px 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
