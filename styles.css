@@ -677,6 +677,18 @@ footer .leaf {
   display: none;
 }
 
+.gifts { align-items: start; }
+.gift .gift-price { color: var(--ink); font-size: 26px; margin: 20px 0; }
+.pix-gift summary { list-style: none; }
+.pix-gift summary::-webkit-details-marker { display: none; }
+.pix-gift summary:focus-visible { outline: 2px solid var(--green); outline-offset: 4px; }
+.pix-gift img { width: 100%; height: auto; margin: 20px auto; }
+.pix-gift label { display: block; margin-bottom: 8px; font-size: 14px; }
+.pix-code { font: 12px/1.6 Georgia, serif; overflow-wrap: anywhere; resize: vertical; }
+.copy-pix { width: 100%; margin-top: 12px; }
+.copy-pix:disabled { opacity: .6; cursor: wait; }
+.pix-gift .pix-status { font-size: 13px; overflow-wrap: anywhere; }
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
