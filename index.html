@@ -1,23 +1,272 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="pt-BR">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Maressa e Matheus • 14.11.2026</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-</head>
-<body>
-<nav><span class="brand">Maressa & Matheus</span><div><a href="#dia">O grande dia</a><a href="#presentes">Presentes</a><a href="#presenca">Confirme sua presença</a></div></nav>
-<header class="hero"><img class="opening-floral" src="floral-abertura.png" alt="" aria-hidden="true"><p class="eyebrow">Um novo capítulo da nossa história</p><h1>Maressa <span class="couple-amp">&</span><br>Matheus</h1><p>Com alegria, convidamos você para o nosso casamento.</p><p class="date">14 . 11 . 2026 &nbsp; · &nbsp; 15h</p><p>Fortaleza — CE</p><a class="button" href="#presenca">Confirmar presença</a><div class="countdown" aria-label="Contagem regressiva para o casamento"><div><b id="days">00</b><span>Dias</span></div><div><b id="hours">00</b><span>Horas</span></div><div><b id="minutes">00</b><span>Minutos</span></div><div><b id="seconds">00</b><span>Segundos</span></div></div><p id="count-message" class="note">Contando os dias para ter você com a gente.</p></header>
-<section class="verse"><blockquote>“Eu sei que tudo quanto Deus faz durará eternamente; nada se lhe deve acrescentar, e nada se lhe deve tirar; e isto faz Deus para que haja temor diante dele.”</blockquote><p>ECLESIASTES 3:14</p></section>
-<section id="dia" class="location"><div class="location-copy"><p class="eyebrow">O grande dia</p><h2>Nos encontramos<br>para dizer sim.</h2><p class="location-intro">Guarde esta data e venha compartilhar esse momento com a gente.</p><div class="location-detail"><p class="eyebrow">Quando</p><p>Sábado, 14 de novembro de 2026 · 15h</p></div><div class="location-detail"><p class="eyebrow">Onde</p><address>Rua Barba Alado, 555<br>Fortaleza — CE</address></div><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Rua%20Barba%20Alado%20555%20Fortaleza%20CE" target="_blank" rel="noopener noreferrer">Abrir endereço no Google Maps ↗</a></div><div class="location-map"><iframe title="Mapa do local do casamento de Maressa e Matheus" src="https://www.google.com/maps?q=Rua%20Barba%20Alado%20555%20Fortaleza%20CE&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe><p class="map-caption">Mapa por busca de endereço. Confirme o ponto exato antes de sair.</p></div></section>
-<section id="traje"><p class="eyebrow">Dress code</p><h2>Leveza para celebrar</h2><div class="dress-copy"><p>Para o nosso casamento à tarde, recomendamos <strong>esporte fino ou cocktail</strong>, em cores claras ou tons pastéis. As cores <strong>branco, off-white e amarelo manteiga</strong> são reservadas para a noiva e as madrinhas. Paletó e salto não são obrigatórios: venha com conforto para aproveitar esse dia com a gente.</p></div><img class="dress-floral" src="floral-abertura.png" alt="" aria-hidden="true"></section>
-<section id="presentes"><p class="eyebrow">Carinho que vira lembrança</p><h2>Lista de presentes</h2><p>Sua presença é o nosso maior presente.</p><div class="gifts"><article class="gift"><div class="icon" aria-hidden="true">♧</div><h3>Nosso lar</h3><p>Presentes para começar a vida a dois.</p></article><article class="gift"><div class="icon" aria-hidden="true">☀</div><h3>Novas memórias</h3><p>Experiências para guardar no coração.</p></article><article class="gift"><div class="icon" aria-hidden="true">♡</div><h3>Um gesto de carinho</h3><p>Uma contribuição para os nossos sonhos.</p></article></div><p class="note">A lista com os itens e links para presentear será disponibilizada em breve.</p></section>
-<section id="presenca"><p class="eyebrow">Você faz parte desta história</p><h2>Confirmação de presença</h2><p>Vai ser uma alegria celebrar com você.</p><p class="note">Prepare sua resposta abaixo. O canal de envio aos noivos ainda será informado; este formulário não envia confirmações.</p><form id="rsvp"><label for="name">Nome completo</label><input id="name" name="name" required autocomplete="name" maxlength="150"><label for="attendance">Você poderá comparecer?</label><select id="attendance" required><option value="">Selecione</option><option>Sim, estarei presente!</option><option>Infelizmente, não poderei comparecer.</option></select><label for="guests">Total de pessoas do seu convite, incluindo você</label><input id="guests" type="number" min="1" max="30" value="1" required><label for="message">Mensagem para os noivos (opcional)</label><textarea id="message" rows="3" maxlength="1000"></textarea><button type="submit">Preparar minha resposta</button><div id="status" role="status" aria-live="polite"></div><a id="download" class="button outline" download="resposta-casamento.txt">Baixar minha resposta</a></form></section>
-<footer><div class="leaf" aria-hidden="true">❦</div>Com amor, Maressa e Matheus.<br><small>14 de novembro de 2026 · Fortaleza</small></footer>
-<script>
-const wedding=new Date('2026-11-14T15:00:00-03:00').getTime();function tick(){let left=Math.max(0,Math.floor((wedding-Date.now())/1000));const values=[Math.floor(left/86400),Math.floor(left%86400/3600),Math.floor(left%3600/60),left%60];['days','hours','minutes','seconds'].forEach((id,i)=>document.getElementById(id).textContent=String(values[i]).padStart(2,'0'));if(left===0)document.getElementById('count-message').textContent='Chegou o grande dia!'}tick();setInterval(tick,1000);
-let downloadUrl;document.getElementById('rsvp').addEventListener('submit',e=>{e.preventDefault();const name=document.getElementById('name').value.trim();if(!name){document.getElementById('name').setCustomValidity('Informe seu nome.');document.getElementById('name').reportValidity();return}const answer='Casamento — 14/11/2026 às 15h\nNome: '+name+'\nResposta: '+document.getElementById('attendance').value+'\nPessoas do convite: '+document.getElementById('guests').value+'\nMensagem: '+document.getElementById('message').value;if(downloadUrl)URL.revokeObjectURL(downloadUrl);downloadUrl=URL.createObjectURL(new Blob([answer],{type:'text/plain;charset=utf-8'}));const link=document.getElementById('download');link.href=downloadUrl;link.style.display='inline-block';document.getElementById('status').textContent='Sua resposta está pronta para baixar. Ela ainda não foi enviada aos noivos.'});document.getElementById('name').addEventListener('input',e=>e.target.setCustomValidity(''));
-</script></body></html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Maressa e Matheus • 14.11.2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body>
+    <nav>
+      <span class="brand">Maressa &amp; Matheus</span>
+      <div>
+        <a href="#dia">O grande dia</a>
+        <a href="#presentes">Presentes</a>
+        <a href="#presenca">Confirme sua presença</a>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <img class="opening-floral" src="floral-abertura.png" alt="" aria-hidden="true">
+      <p class="eyebrow">Um novo capítulo da nossa história</p>
+      <h1>
+        Maressa
+        <span class="couple-amp">&amp;</span>
+        <br>
+        Matheus
+      </h1>
+      <p>Com alegria, convidamos você para o nosso casamento.</p>
+      <p class="date">14 . 11 . 2026 &nbsp; · &nbsp; 15h</p>
+      <p>Fortaleza — CE</p>
+      <a class="button" href="#presenca">Confirmar presença</a>
+
+      <div class="countdown" aria-label="Contagem regressiva para o casamento">
+        <div>
+          <b id="days">00</b>
+          <span>Dias</span>
+        </div>
+        <div>
+          <b id="hours">00</b>
+          <span>Horas</span>
+        </div>
+        <div>
+          <b id="minutes">00</b>
+          <span>Minutos</span>
+        </div>
+        <div>
+          <b id="seconds">00</b>
+          <span>Segundos</span>
+        </div>
+      </div>
+
+      <p id="count-message" class="note">Contando os dias para ter você com a gente.</p>
+    </header>
+
+    <section class="verse">
+      <blockquote>
+        “Eu sei que tudo quanto Deus faz durará eternamente; nada se lhe deve acrescentar,
+        e nada se lhe deve tirar; e isto faz Deus para que haja temor diante dele.”
+      </blockquote>
+      <p>ECLESIASTES 3:14</p>
+    </section>
+
+    <section id="dia" class="location">
+      <div class="location-copy">
+        <p class="eyebrow">O grande dia</p>
+        <h2>
+          Nos encontramos<br>
+          para dizer sim.
+        </h2>
+        <p class="location-intro">Guarde esta data e venha compartilhar esse momento com a gente.</p>
+
+        <div class="location-detail">
+          <p class="eyebrow">Quando</p>
+          <p>Sábado, 14 de novembro de 2026 · 15h</p>
+        </div>
+
+        <div class="location-detail">
+          <p class="eyebrow">Onde</p>
+          <address>
+            Rua Barba Alado, 555<br>
+            Fortaleza — CE
+          </address>
+        </div>
+
+        <a
+          class="map-link"
+          href="https://www.google.com/maps/search/?api=1&query=Rua%20Barba%20Alado%20555%20Fortaleza%20CE"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Abrir endereço no Google Maps ↗
+        </a>
+      </div>
+
+      <div class="location-map">
+        <iframe
+          title="Mapa do local do casamento de Maressa e Matheus"
+          src="https://www.google.com/maps?q=Rua%20Barba%20Alado%20555%20Fortaleza%20CE&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen
+        ></iframe>
+        <p class="map-caption">Mapa por busca de endereço. Confirme o ponto exato antes de sair.</p>
+      </div>
+    </section>
+
+    <section id="traje">
+      <p class="eyebrow">Dress code</p>
+      <h2>Leveza para celebrar</h2>
+
+      <div class="dress-copy">
+        <p>
+          Para o nosso casamento à tarde, recomendamos <strong>esporte fino ou cocktail</strong>,
+          em cores claras ou tons pastéis. As cores <strong>branco, off-white e amarelo manteiga</strong>
+          são reservadas para a noiva e as madrinhas. Paletó e salto não são obrigatórios: venha
+          com conforto para aproveitar esse dia com a gente.
+        </p>
+      </div>
+
+      <img class="dress-floral" src="floral-abertura.png" alt="" aria-hidden="true">
+    </section>
+
+    <section id="presentes">
+      <p class="eyebrow">Carinho que vira lembrança</p>
+      <h2>Lista de presentes</h2>
+      <p>Sua presença é o nosso maior presente.</p>
+
+      <div class="gifts">
+        <article class="gift">
+          <div class="icon" aria-hidden="true">♧</div>
+          <h3>Nosso lar</h3>
+          <p>Presentes para começar a vida a dois.</p>
+        </article>
+
+        <article class="gift">
+          <div class="icon" aria-hidden="true">☀</div>
+          <h3>Novas memórias</h3>
+          <p>Experiências para guardar no coração.</p>
+        </article>
+
+        <article class="gift">
+          <div class="icon" aria-hidden="true">♡</div>
+          <h3>Um gesto de carinho</h3>
+          <p>Uma contribuição para os nossos sonhos.</p>
+        </article>
+      </div>
+
+      <p class="note">A lista com os itens e links para presentear será disponibilizada em breve.</p>
+    </section>
+
+    <section id="presenca">
+      <p class="eyebrow">Você faz parte desta história</p>
+      <h2>Confirmação de presença</h2>
+      <p>Vai ser uma alegria celebrar com você.</p>
+      <p class="note">
+        Prepare sua resposta abaixo. O canal de envio aos noivos ainda será informado; este
+        formulário não envia confirmações.
+      </p>
+
+      <form id="rsvp">
+        <label for="name">Nome completo</label>
+        <input id="name" name="name" required autocomplete="name" maxlength="150">
+
+        <label for="attendance">Você poderá comparecer?</label>
+        <select id="attendance" required>
+          <option value="">Selecione</option>
+          <option>Sim, estarei presente!</option>
+          <option>Infelizmente, não poderei comparecer.</option>
+        </select>
+
+        <label for="guests">Total de pessoas do seu convite, incluindo você</label>
+        <input id="guests" type="number" min="1" max="30" value="1" required>
+
+
+        <button type="submit">Preparar minha resposta</button>
+        <div id="status" role="status" aria-live="polite"></div>
+        <a id="download" class="button outline" download="resposta-casamento.txt">
+          Baixar minha resposta
+        </a>
+      </form>
+    </section>
+
+    <footer>
+      <div class="leaf" aria-hidden="true">❦</div>
+      Com amor, Maressa e Matheus.<br>
+      <small>14 de novembro de 2026 · Fortaleza</small>
+    </footer>
+
+    <script>
+      const wedding = new Date('2026-11-14T15:00:00-03:00').getTime();
+
+      function tick() {
+        let left = Math.max(0, Math.floor((wedding - Date.now()) / 1000));
+        const values = [
+          Math.floor(left / 86400),
+          Math.floor((left % 86400) / 3600),
+          Math.floor((left % 3600) / 60),
+          left % 60,
+        ];
+
+        ['days', 'hours', 'minutes', 'seconds'].forEach((id, index) => {
+          const element = document.getElementById(id);
+          if (element) {
+            element.textContent = String(values[index]).padStart(2, '0');
+          }
+        });
+
+        if (left === 0) {
+          const message = document.getElementById('count-message');
+          if (message) {
+            message.textContent = 'Chegou o grande dia!';
+          }
+        }
+      }
+
+      tick();
+      setInterval(tick, 1000);
+
+      let downloadUrl;
+      const form = document.getElementById('rsvp');
+
+      if (form) {
+        form.addEventListener('submit', (event) => {
+          event.preventDefault();
+
+          const name = document.getElementById('name').value.trim();
+
+          if (!name) {
+            const input = document.getElementById('name');
+            input.setCustomValidity('Informe seu nome.');
+            input.reportValidity();
+            return;
+          }
+
+          const answer = [
+            'Casamento — 14/11/2026 às 15h',
+            `Nome: ${name}`,
+            `Resposta: ${document.getElementById('attendance').value}`,
+            `Pessoas do convite: ${document.getElementById('guests').value}`,
+            `Mensagem: ${document.getElementById('message').value}`,
+          ].join('\n');
+
+          if (downloadUrl) {
+            URL.revokeObjectURL(downloadUrl);
+          }
+
+          downloadUrl = URL.createObjectURL(
+            new Blob([answer], { type: 'text/plain;charset=utf-8' })
+          );
+
+          const link = document.getElementById('download');
+          link.href = downloadUrl;
+          link.style.display = 'inline-block';
+
+          document.getElementById('status').textContent =
+            'Sua resposta está pronta para baixar. Ela ainda não foi enviada aos noivos.';
+        });
+      }
+
+      const nameInput = document.getElementById('name');
+      if (nameInput) {
+        nameInput.addEventListener('input', (event) => {
+          event.target.setCustomValidity('');
+        });
+      }
+    </script>
+  </body>
+</html>
