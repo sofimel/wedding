@@ -157,30 +157,18 @@
       <h2>Confirmação de presença</h2>
       <p>Vai ser uma alegria celebrar com você.</p>
       <p class="note">
-        Prepare sua resposta abaixo. O canal de envio aos noivos ainda será informado; este
-        formulário não envia confirmações.
+        Responda por você e pelas crianças vinculadas ao seu convite. Você pode atualizar
+        sua resposta depois usando o mesmo link.
       </p>
 
       <form id="rsvp">
-        <label for="name">Nome completo</label>
-        <input id="name" name="name" required autocomplete="name" maxlength="150">
-
-        <label for="attendance">Você poderá comparecer?</label>
-        <select id="attendance" required>
-          <option value="">Selecione</option>
-          <option>Sim, estarei presente!</option>
-          <option>Infelizmente, não poderei comparecer.</option>
-        </select>
-
-        <label for="guests">Total de pessoas do seu convite, incluindo você</label>
-        <input id="guests" type="number" min="1" max="30" value="1" required>
-
-
-        <button type="submit">Preparar minha resposta</button>
         <div id="status" role="status" aria-live="polite"></div>
-        <a id="download" class="button outline" download="resposta-casamento.txt">
-          Baixar minha resposta
-        </a>
+        <button id="retry-invitation" type="button" hidden>Tentar carregar novamente</button>
+        <fieldset id="rsvp-fields" disabled hidden>
+          <legend>Respostas de presença</legend>
+          <div id="guest-responses"></div>
+          <button id="send-rsvp" type="submit">Enviar confirmação</button>
+        </fieldset>
       </form>
     </section>
 
@@ -220,53 +208,7 @@
       tick();
       setInterval(tick, 1000);
 
-      let downloadUrl;
-      const form = document.getElementById('rsvp');
-
-      if (form) {
-        form.addEventListener('submit', (event) => {
-          event.preventDefault();
-
-          const name = document.getElementById('name').value.trim();
-
-          if (!name) {
-            const input = document.getElementById('name');
-            input.setCustomValidity('Informe seu nome.');
-            input.reportValidity();
-            return;
-          }
-
-          const answer = [
-            'Casamento — 14/11/2026 às 15h',
-            `Nome: ${name}`,
-            `Resposta: ${document.getElementById('attendance').value}`,
-            `Pessoas do convite: ${document.getElementById('guests').value}`,
-            `Mensagem: ${document.getElementById('message').value}`,
-          ].join('\n');
-
-          if (downloadUrl) {
-            URL.revokeObjectURL(downloadUrl);
-          }
-
-          downloadUrl = URL.createObjectURL(
-            new Blob([answer], { type: 'text/plain;charset=utf-8' })
-          );
-
-          const link = document.getElementById('download');
-          link.href = downloadUrl;
-          link.style.display = 'inline-block';
-
-          document.getElementById('status').textContent =
-            'Sua resposta está pronta para baixar. Ela ainda não foi enviada aos noivos.';
-        });
-      }
-
-      const nameInput = document.getElementById('name');
-      if (nameInput) {
-        nameInput.addEventListener('input', (event) => {
-          event.target.setCustomValidity('');
-        });
-      }
     </script>
+    <script src="rsvp.js" defer></script>
   </body>
 </html>
